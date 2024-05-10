@@ -1,0 +1,16 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1740px;
+  margin: 4rem auto;
+  &__logo {
+    max-width: 224px;
+    width: 100%;
+    position: relative;
+    height: 40px;
+  }
+  ul {
+    display: flex;
+    gap: 1rem;
+  }
+}
