@@ -9,28 +9,34 @@ const HeroScene = dynamic(() => import("./heroScene"), {
   loading: () => <h1 style={{ height: 300 }}>puppa</h1>,
 });
 const springPhysics = {
-  stiffness: 90,
+  stiffness: 70,
   mass: 0.1,
   damping: 20,
   restDelta: 0.001,
 };
 function Hero() {
   const { scrollYProgress } = useScroll({});
-  const slideUpTitle = useTransform(
-    scrollYProgress,
-    [0.15, 0.2],
-    ["0%", "-70%"]
-  );
+  const slideUpTitle = useTransform(scrollYProgress, [0, 0.1], ["0%", "-200%"]);
   const slideUpTitle2 = useTransform(
     scrollYProgress,
-    [0.17, 0.2],
-    ["0%", "-60%"]
+    [0, 0.2],
+    ["0%", "-100%"]
   );
-  const slideUpTxt = useTransform(scrollYProgress, [0.17, 0.2], ["0%", "-50%"]);
+  const slideScritteBackground = useTransform(
+    scrollYProgress,
+    [0, 0.1],
+    ["0%", "-300%"]
+  );
+  const slideUpTxt = useTransform(scrollYProgress, [0, 0.2], ["0%", "-100%"]);
   //smooth nell'animazione
   const animSlideUpTitle2 = useSpring(slideUpTitle2, springPhysics);
   const animSlideUpTitle = useSpring(slideUpTitle, springPhysics);
   const animSlideUpTxt = useSpring(slideUpTxt, springPhysics);
+  const animSlideScritteBackground = useSpring(
+    slideScritteBackground,
+    springPhysics
+  );
+
   return (
     <div className={style.wrapperHero}>
       <div
@@ -40,6 +46,32 @@ function Hero() {
         }}
       >
         <HeroScene />
+        <motion.div
+          className={style.hero__tech}
+          style={{
+            y: animSlideScritteBackground,
+            x: "-50%",
+            rotateX: 1,
+            rotateY: 1,
+            rotateZ: -1,
+            skewX: -2,
+            skewY: -20,
+          }}
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 0.05,
+          }}
+          transition={{
+            duration: 1,
+          }}
+        >
+          Javascript, Python, Angular, React, Gatsby/Next, Node.js, Java,
+          Spring, Spring Boot, Spring Security, JSP,ThymeLeaf, Struts, PHP,
+          Ruby, AWS, HTML, CSS, PostgreSQL ,GraphQL, MongoDB, MySQL Firebase +
+          Firestore + Google Cloud Functions + Google Cloud Storage
+        </motion.div>
         <motion.div className={style.hero__content}>
           <motion.div
             className={style.hero__title}
@@ -92,10 +124,7 @@ function Hero() {
               animate={{ opacity: 1 }}
               transition={{ delay: 1.7, duration: 1 }}
             >
-              Siamo specializzati nella progettazione e nello sviluppo web. Il
-              nostro team è composto da professionisti con oltre 20 anni di
-              esperienza nel campo del design e dello sviluppo frontend e
-              backend.
+              Progettiamo e sviluppiamo per il web da oltre 20 anni
             </motion.p>
           </motion.div>
         </motion.div>

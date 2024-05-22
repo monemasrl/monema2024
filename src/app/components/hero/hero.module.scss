@@ -1,13 +1,8 @@
 .wrapperHero {
-  height: 2500px;
-  margin-top: -200px;
   position: relative;
 }
 .hero {
   height: 100vh;
-  position: sticky;
-  top: 0;
-  z-index: -1;
   width: 100%;
   background: rgb(255, 255, 255, 1);
   background: linear-gradient(
@@ -16,7 +11,18 @@
     rgba(255, 255, 255, 0) 100%
   );
   background-repeat: no-repeat;
-
+  &__tech {
+    font-size: 5rem;
+    width: 50%;
+    font-weight: 900;
+    position: absolute;
+    opacity: 0.05;
+    line-height: 1;
+    top: 0%;
+    left: 50%;
+    //transform: rotate3d(1, 1, -1, 60deg) translateX(-50%) skew(-40deg, -2deg);
+    z-index: -1;
+  }
   &__content {
     position: absolute;
 
@@ -48,21 +54,23 @@
       color: $blue;
     }
     .hero__description {
-      font-size: 1.5rem;
       line-height: 1;
       font-weight: 200;
       font-size: 6rem;
       flex: 1 0 auto;
       text-align: left;
       margin-top: 10rem;
+      background: #ffffff82;
+      padding: 1rem;
     }
     p {
       text-align: left;
       font-weight: 200;
-      line-height: 27px;
+      line-height: 35px;
       max-width: 400px;
-
+      background: rgba(255, 255, 255, 0.8666666667);
       padding: 1rem;
+      font-size: 1.8rem;
     }
   }
 }

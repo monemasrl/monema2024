@@ -3,9 +3,9 @@ import SmoothScroll from "./components/scroll/smoothScroll";
 export default function Home() {
   return (
     <main>
-      <Hero />
-      <section className="content">
-        <SmoothScroll top={3400}>
+      <SmoothScroll top={0}>
+        <Hero />{" "}
+        <section className="content">
           <p
             style={{
               maxWidth: 600,
@@ -33,8 +33,8 @@ export default function Home() {
             eius autem qui numquam. Dolorum accusantium cumque magnam repellat.
             Expedita quam soluta voluptatum dicta explicabo.
           </p>
-        </SmoothScroll>{" "}
-      </section>
+        </section>
+      </SmoothScroll>{" "}
     </main>
   );
 }
