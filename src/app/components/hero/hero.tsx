@@ -39,12 +39,7 @@ function Hero() {
 
   return (
     <div className={style.wrapperHero}>
-      <div
-        className={style.hero}
-        style={{
-          position: "sticky",
-        }}
-      >
+      <div className={style.hero}>
         <HeroScene />
         <motion.div
           className={style.hero__tech}
@@ -82,12 +77,12 @@ function Hero() {
                 className={style.hero__title__mask}
                 initial={{ width: "0%" }}
                 animate={{ width: [0, "100%", 0] }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 1, delay: 2 }}
               ></motion.span>
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.5, duration: 0 }}
+                transition={{ delay: 2.5, duration: 0 }}
               >
                 We are
               </motion.div>
@@ -97,12 +92,12 @@ function Hero() {
                 className={style.hero__title__mask}
                 initial={{ width: "0%" }}
                 animate={{ width: [0, "100%", 0] }}
-                transition={{ delay: 0.05, duration: 1 }}
+                transition={{ delay: 2.2, duration: 1 }}
               ></motion.span>
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.5, duration: 0 }}
+                transition={{ delay: 2.7, duration: 0 }}
               >
                 here to:
               </motion.div>
@@ -114,7 +109,7 @@ function Hero() {
               style={{ y: animSlideUpTitle2 }}
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1, duration: 1 }}
+              transition={{ delay: 3, duration: 1 }}
             >
               design & <br /> develop
             </motion.div>
@@ -122,7 +117,7 @@ function Hero() {
               style={{ y: animSlideUpTxt }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 1.7, duration: 1 }}
+              transition={{ delay: 3.7, duration: 1 }}
             >
               Progettiamo e sviluppiamo per il web da oltre 20 anni
             </motion.p>
