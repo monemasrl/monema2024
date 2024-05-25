@@ -22,7 +22,6 @@ export default function AnimazionePrincipale(props) {
       actions[name].setLoop(THREE.LoopOnce);
       actions[name].play();
     })
-
   }, [])
   useFrame(() => {
     group.current.rotation.y = scrollY.get() * -.01;

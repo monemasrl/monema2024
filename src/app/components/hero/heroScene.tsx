@@ -6,8 +6,6 @@ import { useRef } from "react";
 import * as THREE from "three";
 import AnimazionePrincipale from "./animazione";
 
-useGLTF.preload("/img/keyboard.glb");
-
 function HeroScene() {
   const target = useRef<HTMLCanvasElement>(null);
   //const {actions, names} = useAnimations(animations, group);
@@ -56,3 +54,4 @@ function HeroScene() {
   );
 }
 export default HeroScene;
+useGLTF.preload("/img/animazione.glb");
