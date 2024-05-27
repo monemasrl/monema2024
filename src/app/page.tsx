@@ -35,24 +35,14 @@ export default function Home() {
             <Sezione1Animazione />
           </div>
         </section>
-        <section
-          className="wrapperSecond"
-          ref={wrapperSecondRef}
-          style={{
-            opacity: isWrapperSecondInView ? 1 : 0,
-            transition: "opacity 1s",
-          }}
-        >
-          <div className="wrapperSecond__keyboard">
+        <section className="wrapperSecond" ref={wrapperSecondRef}>
+          <div className="wrapperSecond__animation">
             <Sezione2Animazione isInView={isWrapperSecondInView} />
           </div>
           <div
             className="wrapperSecond__txt"
             style={{
               position: "relative",
-              opacity: isWrapperSecondInView ? 1 : 0,
-              left: isWrapperSecondInView ? 0 : 100,
-              transition: "opacity 1s, left 1s",
             }}
           >
             <p>

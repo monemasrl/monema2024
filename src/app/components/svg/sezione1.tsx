@@ -6,7 +6,7 @@ function Sezione1Animazione() {
   const sezione = useRef(null);
 
   const isInView = useInView(sezione, {
-    margin: "0px 100px -50px 0px",
+    margin: "0% 0px -30% 0px",
   });
   return (
     <svg

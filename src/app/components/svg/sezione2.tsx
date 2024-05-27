@@ -1,42 +1,32 @@
 "use client";
-import { useInView, useAnimate, motion, MotionValue } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { useAnimate, motion, animate } from "framer-motion";
+import { useRef } from "react";
+import "./svg.scss";
 
 function Sezione2Animazione({ isInView }: { isInView: boolean }) {
-  const sezione = useRef(null);
-  const [scope, animate] = useAnimate();
-
-  useEffect(() => {
-    const animation = async () => {
-      await animate("#pc", { opacity: 0, transform: "translateY(0)" });
-      await animate("#smartphone", {
-        opacity: 1,
-        transform: "translateY: 100",
-      });
-      await animate("#watch", { opacity: 0 });
-      await animate(
-        "#pc",
-        { opacity: 1, transform: "translateY(100px)" },
-        { duration: 2 }
-      );
-    };
-    if (isInView) {
-      animation();
-    }
-  }, [isInView]);
-
   return (
-    <div ref={sezione} style={{ opacity: isInView ? 1 : 0 }}>
+    <div
+      style={{
+        opacity: isInView ? 1 : 0,
+        transition: "all .5s cubic-bezier(0,.07,.82,-0.03)",
+      }}
+    >
       <svg
         width="501"
         height="200"
         viewBox="0 0 501 200"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        ref={scope}
       >
         <g id="animazione2">
-          <motion.g id="pc">
+          <g
+            id="pc"
+            style={{
+              opacity: isInView ? 1 : 0,
+              transform: `translateX(${isInView ? 0 : 100}px)`,
+              transition: "all .5s cubic-bezier(0,.07,.82,-0.03)",
+            }}
+          >
             <rect
               id="Rectangle 12"
               width="271"
@@ -58,9 +48,42 @@ function Sezione2Animazione({ isInView }: { isInView: boolean }) {
               fill="white"
               stroke="#4794D4"
             />
-            <circle id="icona3" cx="121.5" cy="132.5" r="5" stroke="#4794D4" />
-            <circle id="icona2" cx="136.5" cy="132.5" r="5" stroke="#4794D4" />
-            <circle id="icona1" cx="151.5" cy="132.5" r="5" stroke="#4794D4" />
+            <circle
+              id="icona3"
+              cx="121.5"
+              cy="132.5"
+              r="5"
+              stroke="#4794D4"
+              style={{
+                opacity: isInView ? 1 : 0,
+                transform: `translateX(${isInView ? 0 : 100}px)`,
+                transition: "all .5s cubic-bezier(0,.07,.82,-0.03) .3s",
+              }}
+            />
+            <circle
+              id="icona2"
+              cx="136.5"
+              cy="132.5"
+              r="5"
+              stroke="#4794D4"
+              style={{
+                opacity: isInView ? 1 : 0,
+                transform: `translateX(${isInView ? 0 : 100}px)`,
+                transition: "all .5s cubic-bezier(0,.07,.82,-0.03) .4s",
+              }}
+            />
+            <circle
+              id="icona1"
+              cx="151.5"
+              cy="132.5"
+              r="5"
+              stroke="#4794D4"
+              style={{
+                opacity: isInView ? 1 : 0,
+                transform: `translateX(${isInView ? 0 : 100}px)`,
+                transition: "all .5s cubic-bezier(0,.07,.82,-0.03) .5s",
+              }}
+            />
             <path
               id="Vector 6"
               d="M14.5 92.5C17 82.6666 29 30 108 67.5C170.238 97.0434 237.333 60.6666 259 55"
@@ -99,8 +122,15 @@ function Sezione2Animazione({ isInView }: { isInView: boolean }) {
               fill="white"
               stroke="#4794D4"
             />
-          </motion.g>
-          <g id="smartphone">
+          </g>
+          <g
+            id="smartphone"
+            style={{
+              opacity: isInView ? 1 : 0,
+              transform: `translateX(${isInView ? 0 : 100}px)`,
+              transition: "all .5s cubic-bezier(0,.07,.82,-0.03) .5s",
+            }}
+          >
             <rect
               id="Rectangle 12_2"
               x="385"
@@ -131,40 +161,56 @@ function Sezione2Animazione({ isInView }: { isInView: boolean }) {
               r="8"
               stroke="#4794D4"
             />
-            <rect
-              id="Rectangle 23"
-              x="327.5"
-              y="105.5"
-              width="19"
-              height="19"
-              rx="3.5"
-              transform="rotate(90 327.5 105.5)"
-              fill="white"
-              stroke="#4794D4"
-            />
-            <rect
-              id="Rectangle 24"
-              x="351.5"
-              y="105.5"
-              width="19"
-              height="19"
-              rx="3.5"
-              transform="rotate(90 351.5 105.5)"
-              fill="white"
-              stroke="#4794D4"
-            />
-            <rect
-              id="Rectangle 25"
-              x="375.5"
-              y="105.5"
-              width="19"
-              height="19"
-              rx="3.5"
-              transform="rotate(90 375.5 105.5)"
-              fill="white"
-              stroke="#4794D4"
-            />
-            <g id="icone3">
+            <g
+              id="icone4"
+              style={{
+                opacity: isInView ? 1 : 0,
+                transform: `translateX(${isInView ? 0 : 100}px)`,
+                transition: "all .5s cubic-bezier(0,.07,.82,-0.03) .55s",
+              }}
+            >
+              <rect
+                id="Rectangle 23"
+                x="327.5"
+                y="105.5"
+                width="19"
+                height="19"
+                rx="3.5"
+                transform="rotate(90 327.5 105.5)"
+                fill="white"
+                stroke="#4794D4"
+              />
+              <rect
+                id="Rectangle 24"
+                x="351.5"
+                y="105.5"
+                width="19"
+                height="19"
+                rx="3.5"
+                transform="rotate(90 351.5 105.5)"
+                fill="white"
+                stroke="#4794D4"
+              />
+              <rect
+                id="Rectangle 25"
+                x="375.5"
+                y="105.5"
+                width="19"
+                height="19"
+                rx="3.5"
+                transform="rotate(90 375.5 105.5)"
+                fill="white"
+                stroke="#4794D4"
+              />
+            </g>
+            <g
+              id="icone3"
+              style={{
+                opacity: isInView ? 1 : 0,
+                transform: `translateX(${isInView ? 0 : 100}px)`,
+                transition: "all .5s cubic-bezier(0,.07,.82,-0.03) .6s",
+              }}
+            >
               <rect
                 id="Rectangle 14_2"
                 x="327.5"
@@ -199,7 +245,14 @@ function Sezione2Animazione({ isInView }: { isInView: boolean }) {
                 stroke="#4794D4"
               />
             </g>
-            <g id="icone2">
+            <g
+              id="icone2"
+              style={{
+                opacity: isInView ? 1 : 0,
+                transform: `translateX(${isInView ? 0 : 100}px)`,
+                transition: "all .5s cubic-bezier(0,.07,.82,-0.03) .65s",
+              }}
+            >
               <rect
                 id="Rectangle 17_2"
                 x="327.5"
@@ -234,7 +287,14 @@ function Sezione2Animazione({ isInView }: { isInView: boolean }) {
                 stroke="#4794D4"
               />
             </g>
-            <g id="icone1">
+            <g
+              id="icone1"
+              style={{
+                opacity: isInView ? 1 : 0,
+                transform: `translateX(${isInView ? 0 : 100}px)`,
+                transition: "all .5s cubic-bezier(0,.07,.82,-0.03) .7s",
+              }}
+            >
               <rect
                 id="Rectangle 20"
                 x="327.5"
@@ -270,7 +330,14 @@ function Sezione2Animazione({ isInView }: { isInView: boolean }) {
               />
             </g>
           </g>
-          <g id="watch">
+          <g
+            id="watch"
+            style={{
+              opacity: isInView ? 1 : 0,
+              transform: `translateX(${isInView ? 0 : 100}px)`,
+              transition: "all .5s cubic-bezier(0,.07,.82,-0.03) 1s",
+            }}
+          >
             <rect
               id="Rectangle 12_3"
               x="500"

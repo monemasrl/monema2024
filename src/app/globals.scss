@@ -59,15 +59,14 @@ h1 {
   column-gap: 10px;
   justify-items: center;
   align-items: center;
-  margin: 8rem auto 8rem auto;
+  margin: 13rem auto 8rem auto;
   &__txt {
     grid-column: span 4;
     font-weight: 200;
     font-size: 2rem;
   }
-  &__keyboard {
+  &__animation {
     grid-column: 3/7;
     width: 70%;
-    height: 700px;
   }
 }
