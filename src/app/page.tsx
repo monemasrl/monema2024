@@ -1,15 +1,18 @@
 "use client";
-import Keyboard from "./components/3d/keyboard/model";
 import Hero from "./components/hero/hero";
 import SmoothScroll from "./components/scroll/smoothScroll";
 import Sezione2Animazione from "./components/svg/sezione2";
 import Sezione1Animazione from "./components/svg/sezione1";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-
+import CarouselResponsive from "./components/slider/carousel";
 export default function Home() {
   const wrapperSecondRef = useRef(null);
+  const wrapperThirdRef = useRef(null);
   const isWrapperSecondInView = useInView(wrapperSecondRef, {
+    margin: "0% 0px -10% 0px",
+  });
+  const isWrapperThirdInView = useInView(wrapperThirdRef, {
     margin: "0% 0px -30% 0px",
   });
   return (
@@ -50,6 +53,9 @@ export default function Home() {
               performanti, garantendo la massima sicurezza e scalabilità
             </p>
           </div>
+        </section>
+        <section className="wrapperThird" ref={wrapperThirdRef}>
+          <CarouselResponsive isInView={isWrapperThirdInView} />
         </section>
       </SmoothScroll>{" "}
     </main>

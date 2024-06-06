@@ -70,3 +70,12 @@ h1 {
     width: 70%;
   }
 }
+.wrapperThird {
+  position: relative;
+  margin: 0rem auto;
+  overflow: hidden;
+  height: 90vh;
+}
+.slick-list {
+  overflow: visible !important;
+}
