@@ -6,7 +6,9 @@ type Tdata = {
   image: string;
   title: string;
   description: string;
-  link: string;
+  link?: string;
+  skills: string;
+  tecnologie: string;
 };
 
 function Scheda({
@@ -65,11 +67,24 @@ function Scheda({
             />
           </motion.div>
           <div className={style.homePortfolioItem__content}>
-            <div onClick={() => setDataFromSlide && setDataFromSlide("")}>
+            <div
+              className={style.homePortfolioItem__content__close}
+              onClick={() => setDataFromSlide && setDataFromSlide("")}
+            >
               close
             </div>
-            <h3>{dataScheda.title}</h3>
-            <p>{dataScheda.description}</p>
+            <div className={style.homePortfolioItem__content__title}>
+              <h3>{dataScheda.title}</h3>
+            </div>
+            <p dangerouslySetInnerHTML={{ __html: dataScheda.description }} />
+            <p>
+              <span>SKILLS</span>
+              {dataScheda.skills}
+            </p>
+            <p>
+              <span>Tecnologie</span>
+              {dataScheda.tecnologie}
+            </p>
             <a href={dataScheda.link}>Vai al sito</a>
           </div>
         </motion.div>

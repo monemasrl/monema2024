@@ -26,6 +26,7 @@ h1 {
   margin: 0;
 }
 .wrapperFirst {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   column-gap: 20px;
@@ -59,7 +60,10 @@ h1 {
   column-gap: 10px;
   justify-items: center;
   align-items: center;
-  margin: 13rem auto 8rem auto;
+  margin: 8rem auto 8rem auto;
+  .testo {
+    font-size: 1.2rem;
+  }
   &__txt {
     grid-column: span 4;
     font-weight: 200;
@@ -75,7 +79,84 @@ h1 {
   margin: 0rem auto;
   overflow: hidden;
   height: 90vh;
+  h2 {
+    display: inline-block;
+    margin: 0;
+    position: absolute;
+    font-size: 16rem;
+    top: 0%;
+    left: 0%;
+    color: #d0d9e0;
+  }
 }
 .slick-list {
   overflow: visible !important;
+}
+.thirdKeyboartWrapper {
+  position: absolute;
+  top: 0;
+  transform: translate(-50%, -50%);
+  top: 160%;
+  left: 50%;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  z-index: -1;
+  animation: fade 1s 1s forwards;
+}
+.thirdMugWrapper {
+  position: absolute;
+  top: 0;
+  width: 500px;
+  height: 600px;
+  opacity: 0;
+  z-index: 1;
+  animation: fade 1s 1s forwards;
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+.lastSectionContatti {
+  position: relative;
+  height: 300vh;
+  background-color: #536b8f;
+  margin-top: 6rem;
+  &__video {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    object-fit: cover;
+
+    filter: blur(1px);
+    z-index: -1;
+  }
+  &__content {
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    z-index: 100;
+
+    h2 {
+      font-size: 5rem;
+      color: white;
+      text-transform: uppercase;
+      text-align: center;
+      margin-top: 5rem;
+      margin-bottom: 1rem;
+    }
+    > p {
+      text-align: center;
+      color: white;
+      font-weight: 200;
+      font-size: 1.7rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.2;
+    }
+  }
 }

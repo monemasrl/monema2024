@@ -12,9 +12,9 @@ export default function AnimazionePrincipale(props) {
   const group = useRef()
   const { nodes, materials, animations, scene } = useGLTF('/img/animazione.glb')
   const { actions, names } = useAnimations(animations, group)
-  console.log(names, 'names')
+
   const { scrollY } = useScroll({});
-  console.log(nodes, 'scroll')
+
   useEffect(() => {
     names.forEach((name) => {
       actions[name].clampWhenFinished = true;
@@ -24,7 +24,7 @@ export default function AnimazionePrincipale(props) {
     })
   }, [])
   useFrame(() => {
-    group.current.rotation.y = scrollY.get() * -.01;
+    group.current.rotation.y = scrollY.get() * -.002;
   }
   )
 

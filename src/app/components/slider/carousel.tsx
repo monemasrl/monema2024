@@ -4,21 +4,43 @@ import "slick-carousel/slick/slick-theme.css";
 import style from "./carousel.module.scss";
 import SingleSlide from "./singleslide";
 import { useState } from "react";
-import Image from "next/image";
+
 import Scheda from "./scheda";
 
 const data = [
   {
     image: "/img/portfolio/irma.jpg",
     title: "irma",
-    description: "descrizione",
+    description:
+      "Innovative Radiation Monitor for contAiners at port custom gates\n <br/> Sviluppo di un portale innovativo per l’individuazione di materiale radioattivo all’interno dei container in transito nei varchi doganali portuali, \nun portale innovativo per individuare la presenza di materiale nucleare occultato, o semplicemente disperso, all’interno dei container durante la movimentazione.",
     link: "http://",
+    skills: "Backend, Frontend, Ux/Ui",
+    tecnologie: "javascript, react, nodejs, ...",
   },
   {
     image: "/img/portfolio/deka.jpg",
-    title: "deka",
-    description: "descrizione",
+    title: "MONNALISA 4.0",
+    description:
+      "Ux/Ui, interfacce di utilizzo per device chirurgico, Innovazione attraverso sistemi rivoluzionari, tecnologie all'avanguardia, applicazioni avanzate e nuove frontiere terapeutiche. Da oltre 30 anni siamo un epicentro dell'innovazione per l'intero settore medico a livello mondiale.",
+    skills: "Ux/Ui",
+    tecnologie: "Illustrator, Affinity, Figma",
+  },
+  {
+    image: "/img/portfolio/irma.jpg",
+    title: "test",
+    description:
+      "Innovative Radiation Monitor for contAiners at port custom gates\n <br/> Sviluppo di un portale innovativo per l’individuazione di materiale radioattivo all’interno dei container in transito nei varchi doganali portuali, \nun portale innovativo per individuare la presenza di materiale nucleare occultato, o semplicemente disperso, all’interno dei container durante la movimentazione.",
     link: "http://",
+    skills: "Backend, Frontend, Ux/Ui",
+    tecnologie: "javascript, react, nodejs, ...",
+  },
+  {
+    image: "/img/portfolio/deka.jpg",
+    title: "test 2",
+    description:
+      "Ux/Ui, interfacce di utilizzo per device chirurgico, Innovazione attraverso sistemi rivoluzionari, tecnologie all'avanguardia, applicazioni avanzate e nuove frontiere terapeutiche. Da oltre 30 anni siamo un epicentro dell'innovazione per l'intero settore medico a livello mondiale.",
+    skills: "Ux/Ui",
+    tecnologie: "Illustrator, Affinity, Figma",
   },
 ];
 
@@ -68,9 +90,9 @@ function CarouselResponsive({ isInView }: { isInView: boolean }) {
       <div
         className={`slider-container ${style.monemaSlider}`}
         style={{
-          opacity: isInView ? 1 : 0,
+          opacity: isInView ? 1 : 0.5,
           transform: isInView ? "skew(34deg, -10deg)" : "skew(10deg,-2deg)",
-          transition: "all .5s cubic-bezier(0,.07,.82,-0.03)",
+          transition: "all 1s cubic-bezier(0,.07,.82,-0.03)",
         }}
       >
         <Slider {...settings}>

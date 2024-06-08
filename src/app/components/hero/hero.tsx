@@ -2,7 +2,6 @@
 import style from "./hero.module.scss";
 import dynamic from "next/dynamic";
 import { motion, useTransform, useScroll, useSpring } from "framer-motion";
-import { use, useRef } from "react";
 
 const HeroScene = dynamic(() => import("./heroScene"), {
   ssr: false,

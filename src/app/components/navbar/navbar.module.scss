@@ -1,14 +1,16 @@
 .navbar {
   position: relative;
+  position: relative;
   top: 0;
   display: flex;
   justify-content: space-between;
   left: 0;
   right: 0;
-  max-width: 1740px;
+  max-width: 1680px;
   width: 100%;
-  margin: 3rem auto;
+  margin: 3rem auto 1rem auto;
   z-index: 100;
+  align-items: center;
   &__logo {
     max-width: 190px;
     width: 100%;

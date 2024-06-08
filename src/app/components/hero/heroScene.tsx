@@ -9,24 +9,7 @@ import AnimazionePrincipale from "./animazione";
 function HeroScene() {
   const target = useRef<HTMLCanvasElement>(null);
   //const {actions, names} = useAnimations(animations, group);
-  const { scrollYProgress } = useScroll();
 
-  const rotate = useTransform(scrollYProgress, [0, 0.1], [0, 4.5]);
-  //const opacity = useTransform(scrollYProgress, [0, 200], [0.5, 1]);
-  const ref = useRef<THREE.Mesh>(); // Update the type of ref to THREE.Mesh
-  const toCenter = useTransform(scrollYProgress, [0, 0.1], [-20, -100]);
-
-  const springPhysics = {
-    stiffness: 90,
-    mass: 0.1,
-    damping: 20,
-    restDelta: 0.001,
-  };
-
-  const animRotate = useSpring(rotate, springPhysics);
-  const animToCenter = useSpring(toCenter, springPhysics);
-  const { nodes, scene, animations } = useGLTF("/img/animazione.glb");
-  console.log(nodes, "scene");
   return (
     <>
       {/*  <Test /> */}
