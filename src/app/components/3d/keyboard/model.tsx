@@ -20,7 +20,7 @@ function Keyboard() {
   console.log(nodes, "nodes");
   useFrame(() => {
     if (ref.current) {
-      ref.current.rotation.y += 0.0001;
+      ref.current.rotation.z += 0.0005;
     }
   });
   return (
@@ -32,19 +32,19 @@ function Keyboard() {
         fov={3.6}
         coordinateSystem={2000}
       />
-      <ambientLight intensity={4} color={"#1c70bf"} />
-      <directionalLight position={[10, 90, -50]} color="white" />
+      <ambientLight intensity={2} color={"#1c70bf"} />
+      <directionalLight position={[10, 90, -10]} color="white" />
       <group dispose={null}>
         <motion.mesh
           ref={ref as any}
           geometry={(nodes.Cube069 as any).geometry}
-          scale={[0.1, 0.1, 0.1]}
+          scale={[0.05, 0.1, 0.1]}
           position={[1, -1, 1]}
           rotation={[0, 0, 0]}
         >
           {" "}
           {/* Access geometry directly on nodes.Cube069 */}
-          <meshStandardMaterial wireframe />
+          <meshStandardMaterial />
         </motion.mesh>
       </group>
       <GizmoHelper />

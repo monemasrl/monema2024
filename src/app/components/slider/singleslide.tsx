@@ -1,4 +1,5 @@
-import React, { MouseEventHandler, useState } from "react";
+import React, { MouseEventHandler } from "react";
+
 import { motion } from "framer-motion";
 import style from "./carousel.module.scss";
 import Details from "./details";

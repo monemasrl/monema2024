@@ -21,7 +21,7 @@
 
 .monemaSlider {
   max-width: 1300px;
-  margin: 310px auto 210px auto;
+  margin: 230px auto 230px auto;
   transform: skew(34deg, -10deg);
 }
 .details {
@@ -29,7 +29,7 @@
 }
 
 .homePortfolioItem {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -52,7 +52,6 @@
     padding: 2rem;
     &__close {
       position: relative;
-      display: inline-block;
       float: right;
       opacity: 0;
       cursor: pointer;

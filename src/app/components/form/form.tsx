@@ -100,72 +100,78 @@ function Form() {
   };
 
   return (
-    <form
-      className={`${style.form} ${style.form__lavora}`}
-      name="contatti"
-      onSubmit={handleFormSubmit}
-    >
-      <SuccessMessage status={status} />
-      <input type="hidden" name="form-name" value="contatti" />
-      <p>
-        {" "}
-        <label htmlFor="nome">Nome:</label> <br />
-        <input
-          onChange={(e) => {
-            setNome(e.target.value);
-          }}
-          type="text"
-          name="nome"
-          id="nome"
-          required
-        />
-      </p>
-      <p>
-        <label htmlFor="cognome">Cognome:</label> <br />
-        <input
-          onChange={(e) => {
-            setCognome(e.target.value);
-          }}
-          type="text"
-          name="cognome"
-          id=""
-          required
-        />
-      </p>
-      <p>
-        <label htmlFor="youremail">Indirizzo mail:</label> <br />
-        <input
-          onChange={(e) => setMail(e.target.value)}
-          type="email"
-          name="email"
-          id="youremail"
-          required
-        />
-      </p>
-
-      <p>
-        <label htmlFor="yourmessage">Messaggio:</label> <br />
-        <textarea
-          onChange={(e) => {
-            setMessaggio(e.target.value);
-          }}
-          name="message"
-          id="yourmessage"
-          required
-        ></textarea>
-      </p>
-      <div style={{ height: "20px" }}>
-        {errorNome && <p className={style.error}>{errorNome}</p>}
-        {errorCognome && <p className={style.error}>{errorCognome}</p>}
-        {errorMail && <p className={style.error}>{errorMail}</p>}
-        {errorMessaggio && <p className={style.error}>{errorMessaggio}</p>}
+    <div className={style.wrapperForm}>
+      <div className={style.form__heading}>
+        <p>Hai bisogno di informazioni? hai un progetto da proporci?</p>
+        <h2>contattaci</h2>
       </div>
-      <p>
-        <button disabled={submit ? false : true} type="submit">
-          Invia
-        </button>
-      </p>
-    </form>
+      <form
+        className={`${style.form} ${style.form__lavora}`}
+        name="contatti"
+        onSubmit={handleFormSubmit}
+      >
+        <SuccessMessage status={status} />
+        <input type="hidden" name="form-name" value="contatti" />
+        <p>
+          {" "}
+          <label htmlFor="nome">Nome:</label> <br />
+          <input
+            onChange={(e) => {
+              setNome(e.target.value);
+            }}
+            type="text"
+            name="nome"
+            id="nome"
+            required
+          />
+        </p>
+        <p>
+          <label htmlFor="cognome">Cognome:</label> <br />
+          <input
+            onChange={(e) => {
+              setCognome(e.target.value);
+            }}
+            type="text"
+            name="cognome"
+            id=""
+            required
+          />
+        </p>
+        <p>
+          <label htmlFor="youremail">Mail:</label> <br />
+          <input
+            onChange={(e) => setMail(e.target.value)}
+            type="email"
+            name="email"
+            id="youremail"
+            required
+          />
+        </p>
+
+        <p>
+          <label htmlFor="yourmessage">Messaggio:</label> <br />
+          <textarea
+            onChange={(e) => {
+              setMessaggio(e.target.value);
+            }}
+            name="message"
+            id="yourmessage"
+            required
+          ></textarea>
+        </p>
+        <div style={{ height: "20px" }}>
+          {errorNome && <p className={style.error}>{errorNome}</p>}
+          {errorCognome && <p className={style.error}>{errorCognome}</p>}
+          {errorMail && <p className={style.error}>{errorMail}</p>}
+          {errorMessaggio && <p className={style.error}>{errorMessaggio}</p>}
+        </div>
+        <p>
+          <button disabled={submit ? false : true} type="submit">
+            Invia
+          </button>
+        </p>
+      </form>
+    </div>
   );
 }
 

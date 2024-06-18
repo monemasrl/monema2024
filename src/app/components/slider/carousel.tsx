@@ -1,10 +1,17 @@
+"use client";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import style from "./carousel.module.scss";
 import SingleSlide from "./singleslide";
-import { useState } from "react";
-
+import { useState, useRef } from "react";
+import { createPortal } from "react-dom";
+import {
+  useMotionTemplate,
+  useScroll,
+  useTransform,
+  motion,
+} from "framer-motion";
 import Scheda from "./scheda";
 
 const data = [
@@ -79,20 +86,31 @@ function CarouselResponsive({ isInView }: { isInView: boolean }) {
       },
     ],
   };
+  const wrapper = useRef(null);
   const [dataFromSlide, setDataFromSlide] = useState<string | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: wrapper,
+    offset: ["start end", "end end"],
+  });
+  const progress = useTransform(scrollYProgress, [0, 1], ["100%", "0%"]);
+
+  const trasizioneCarouselIniziale = useMotionTemplate`translate(${progress},0%) skew(34deg, -10deg)`;
   return (
     <>
-      <Scheda
-        data={data}
-        setDataFromSlide={setDataFromSlide}
-        title={dataFromSlide || ""}
-      />
-      <div
+      {createPortal(
+        <Scheda
+          data={data}
+          setDataFromSlide={setDataFromSlide}
+          title={dataFromSlide || ""}
+        />,
+        document.body
+      )}
+      <motion.div
         className={`slider-container ${style.monemaSlider}`}
+        ref={wrapper}
         style={{
-          opacity: isInView ? 1 : 0.5,
-          transform: isInView ? "skew(34deg, -10deg)" : "skew(10deg,-2deg)",
-          transition: "all 1s cubic-bezier(0,.07,.82,-0.03)",
+          opacity: 1,
+          transform: trasizioneCarouselIniziale,
         }}
       >
         <Slider {...settings}>
@@ -106,7 +124,7 @@ function CarouselResponsive({ isInView }: { isInView: boolean }) {
             />
           ))}
         </Slider>
-      </div>
+      </motion.div>
     </>
   );
 }

@@ -5,7 +5,7 @@ import { motion, useTransform, useScroll, useSpring } from "framer-motion";
 
 const HeroScene = dynamic(() => import("./heroScene"), {
   ssr: false,
-  loading: () => <h1 style={{ height: 300 }}>puppa</h1>,
+  loading: () => <h1 style={{ height: 300 }}>loading</h1>,
 });
 const springPhysics = {
   stiffness: 70,
@@ -45,9 +45,7 @@ function Hero() {
           style={{
             y: animSlideScritteBackground,
             x: "-50%",
-            rotateX: 1,
-            rotateY: 1,
-            rotateZ: -1,
+
             skewX: -2,
             skewY: -20,
           }}

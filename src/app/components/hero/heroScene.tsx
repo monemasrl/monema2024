@@ -1,9 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera, OrbitControls, useGLTF } from "@react-three/drei";
-import { useScroll, useTransform, useSpring } from "framer-motion";
-
 import { useRef } from "react";
-import * as THREE from "three";
 import AnimazionePrincipale from "./animazione";
 
 function HeroScene() {

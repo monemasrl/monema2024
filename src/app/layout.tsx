@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Heebo } from "next/font/google";
 import "./globals.scss";
 import Navbar from "./components/navbar/navbar";
-
+import Footer from "./components/footer/footer";
 const inter = Heebo({
   weight: ["100", "200", "400", "500", "700", "900"],
   subsets: ["latin"],
@@ -25,6 +25,7 @@ export default function RootLayout({
           <Navbar />
         </header>
         {children}
+        <Footer />
       </body>
     </html>
   );

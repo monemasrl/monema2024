@@ -1,6 +1,4 @@
 "use client";
-import { useAnimate, motion, animate } from "framer-motion";
-import { useRef } from "react";
 import "./svg.scss";
 
 function Sezione2Animazione({ isInView }: { isInView: boolean }) {
@@ -8,12 +6,13 @@ function Sezione2Animazione({ isInView }: { isInView: boolean }) {
     <div
       style={{
         opacity: isInView ? 1 : 0,
+        width: "100%",
         transition: "all .5s cubic-bezier(0,.07,.82,-0.03)",
       }}
     >
       <svg
-        width="501"
-        height="200"
+        width="100%"
+        height="100%"
         viewBox="0 0 501 200"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
