@@ -35,7 +35,7 @@ function Sezione2Animazione({ isInView }: { isInView: boolean }) {
               rx="4"
               fill="white"
               stroke="#4794D4"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <rect
               id="Rectangle 13"
@@ -97,7 +97,7 @@ function Sezione2Animazione({ isInView }: { isInView: boolean }) {
               rx="4"
               fill="white"
               stroke="#4794D4"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <rect
               id="Rectangle 15"
@@ -140,7 +140,7 @@ function Sezione2Animazione({ isInView }: { isInView: boolean }) {
               transform="rotate(90 385 2)"
               fill="white"
               stroke="#4794D4"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <rect
               id="Rectangle 13_2"
@@ -347,7 +347,7 @@ function Sezione2Animazione({ isInView }: { isInView: boolean }) {
               transform="rotate(90 500 44)"
               fill="white"
               stroke="#4794D4"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <rect
               id="Rectangle 13_3"

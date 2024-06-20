@@ -97,14 +97,15 @@ function CarouselResponsive({ isInView }: { isInView: boolean }) {
   const trasizioneCarouselIniziale = useMotionTemplate`translate(${progress},0%) skew(34deg, -10deg)`;
   return (
     <>
-      {createPortal(
-        <Scheda
-          data={data}
-          setDataFromSlide={setDataFromSlide}
-          title={dataFromSlide || ""}
-        />,
-        document.body
-      )}
+      {typeof window === "object" &&
+        createPortal(
+          <Scheda
+            data={data}
+            setDataFromSlide={setDataFromSlide}
+            title={dataFromSlide || ""}
+          />,
+          document.body
+        )}
       <motion.div
         className={`slider-container ${style.monemaSlider}`}
         ref={wrapper}
