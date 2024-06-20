@@ -11,7 +11,7 @@ function HeroScene() {
     <>
       {/*  <Test /> */}
       <Canvas ref={target} style={{ zIndex: 2 }}>
-        <Suspense fallback={<h2>loading</h2>}>
+        <Suspense fallback={null}>
           <PerspectiveCamera
             makeDefault
             position={[180, 350, -250]}
