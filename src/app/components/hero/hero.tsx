@@ -5,7 +5,34 @@ import { motion, useTransform, useScroll, useSpring } from "framer-motion";
 
 const HeroScene = dynamic(() => import("./heroScene"), {
   ssr: false,
-  loading: () => <h1 style={{ height: 300 }}>loading</h1>,
+  loading: () => (
+    <div
+      style={{
+        position: "relative",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100vh",
+
+        zIndex: 100,
+      }}
+    >
+      <h1
+        style={{
+          position: "absolute",
+          top: "40%",
+          left: "50%",
+          transform: "translate(-50%,-50%)",
+          opacity: 0.2,
+          fontSize: "3rem",
+          padding: ".5rem 2rem",
+          border: "1px solid #000",
+        }}
+      >
+        loading...
+      </h1>
+    </div>
+  ),
 });
 const springPhysics = {
   stiffness: 70,

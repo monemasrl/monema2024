@@ -1,5 +1,5 @@
 "use client";
-import Hero from "./components/hero/hero";
+
 import SmoothScroll from "./components/scroll/smoothScroll";
 import Sezione2Animazione from "./components/svg/sezione2";
 import Sezione1Animazione from "./components/svg/sezione1";
@@ -12,11 +12,24 @@ import {
 } from "framer-motion";
 import { useRef } from "react";
 import CarouselResponsive from "./components/slider/carousel";
-import Keyboard from "./components/3d/keyboard/model";
-import { Canvas } from "@react-three/fiber";
-import Mug from "./components/3d/mug/mug";
+const KeyboardCanvas = dynamic(
+  () => import("./components/3d/keyboard/keyboardCanvas"),
+  {
+    ssr: false,
+    loading: () => <p>loading...</p>,
+  }
+);
+
+const MugCanvas = dynamic(() => import("./components/3d/mug/mugCanvas"), {
+  ssr: false,
+  loading: () => <p>loading...</p>,
+});
 import Form from "./components/form/form";
 import Image from "next/image";
+
+import Hero from "./components/hero/hero";
+import dynamic from "next/dynamic";
+
 export default function Home() {
   const wrapperSecondRef = useRef(null);
   const wrapperThirdRef = useRef(null);
@@ -59,7 +72,8 @@ export default function Home() {
   return (
     <main>
       <SmoothScroll>
-        <Hero />{" "}
+        <Hero />
+
         <section className="wrapperFirst">
           <div className="wrapperFirst__txt">
             <p>
@@ -160,9 +174,7 @@ export default function Home() {
               y: keyboardTransform,
             }}
           >
-            <Canvas>
-              <Keyboard />
-            </Canvas>
+            <KeyboardCanvas />
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 100 }}
@@ -178,9 +190,7 @@ export default function Home() {
               y: mugTransform,
             }}
           >
-            <Canvas>
-              <Mug />
-            </Canvas>
+            <MugCanvas />
           </motion.div>
         </section>
         <section className="lastSectionContatti" ref={wrapperContatti}>

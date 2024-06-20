@@ -3,7 +3,6 @@ import {
   OrbitControls,
   GizmoHelper,
   PerspectiveCamera,
-  PivotControls,
 } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
@@ -16,7 +15,7 @@ useGLTF.preload("/img/keyboard.glb");
 function Keyboard() {
   const ref = useRef<THREE.Mesh>(null); // Update the type of ref to THREE.Mesh
 
-  const { nodes, scene } = useGLTF("/img/keyboard.glb");
+  const { nodes } = useGLTF("/img/keyboard.glb");
   console.log(nodes, "nodes");
   useFrame(() => {
     if (ref.current) {
