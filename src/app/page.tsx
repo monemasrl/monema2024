@@ -197,7 +197,7 @@ export default function Home() {
           <div className="lastSectionContatti__content">
             <motion.div
               className="lastSectionContatti__content__video"
-              style={{ flex: "1", maxWidth: "80%" }}
+              style={{ flex: "1", maxWidth: "60%" }}
             >
               <motion.video
                 autoPlay
