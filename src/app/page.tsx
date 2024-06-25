@@ -61,12 +61,12 @@ export default function Home() {
   const progressContatti = useTransform(
     scrollYProgressContatti,
     [0.6, 0.9],
-    ["0%", "40%"]
+    ["0%", "35%"]
   );
   const progressForm = useTransform(
     scrollYProgressContatti,
-    [0.5, 0.6],
-    ["1.2", "1"]
+    [0.5, 0.8],
+    [0, 1]
   );
   const animateContatti = useMotionTemplate`scale(${progressForm})`;
   return (
@@ -195,11 +195,11 @@ export default function Home() {
         </section>
         <section className="lastSectionContatti" ref={wrapperContatti}>
           <div className="lastSectionContatti__content">
-            <motion.div style={{ transform: animateContatti, width: "60%" }}>
+            <motion.div
+              className="lastSectionContatti__content__video"
+              style={{ flex: "1", maxWidth: "80%" }}
+            >
               <motion.video
-                style={{
-                  transform: animateContatti,
-                }}
                 autoPlay
                 loop
                 muted
@@ -208,12 +208,29 @@ export default function Home() {
               >
                 <source src="/video.mp4" type="video/mp4" />
               </motion.video>
+              <motion.div
+                style={{
+                  width: "50%",
+                  height: "50%",
+                  transform: "translate(-50%, -50%)",
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  opacity: progressForm,
+                  overflow: "hidden",
+                }}
+              >
+                <Image
+                  src={"/img/contattaci.svg"}
+                  alt="contattaci"
+                  layout="fill"
+                />
+              </motion.div>
             </motion.div>
 
             <motion.div
               style={{
                 width: progressContatti,
-
                 margin: "1rem",
                 overflow: "hidden",
               }}

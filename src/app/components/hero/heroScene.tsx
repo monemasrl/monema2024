@@ -9,7 +9,6 @@ function HeroScene() {
 
   return (
     <>
-      {/*  <Test /> */}
       <Canvas ref={target} style={{ zIndex: 2 }}>
         <Suspense fallback={null}>
           <PerspectiveCamera

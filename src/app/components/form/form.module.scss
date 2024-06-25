@@ -62,14 +62,21 @@ form.form {
 .form__heading {
   margin: 1rem 0;
   min-width: 550px;
+  p {
+    margin-bottom: 1rem;
+    text-align: center;
+    border-bottom: 1px solid white;
+    padding: 1rem 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 200;
+  }
 }
 .wrapperForm {
-  max-width: 1000px;
   width: 100%;
   grid-column: span 3;
-  background-color: rgb(208 217 224);
+  background-color: rgb(50 93 130);
   padding: 1rem 2rem;
-  color: $blue;
+  color: #ffffff;
   border-radius: 20px;
   margin: 6rem 0;
 }
