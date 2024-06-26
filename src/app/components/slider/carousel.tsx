@@ -92,7 +92,7 @@ function CarouselResponsive({ isInView }: { isInView: boolean }) {
     target: wrapper,
     offset: ["start end", "end end"],
   });
-  const progress = useTransform(scrollYProgress, [0, 1], ["100%", "0%"]);
+  const progress = useTransform(scrollYProgress, [0, 1], ["30%", "0%"]);
 
   const trasizioneCarouselIniziale = useMotionTemplate`translate(${progress},0%) skew(34deg, -10deg)`;
   return (

@@ -6,7 +6,7 @@ Command: npx gltfjsx@6.2.16 animazione.glb
 import React, { useEffect, useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
-import { useScroll, } from 'framer-motion'
+import { useScroll } from 'framer-motion'
 import * as THREE from 'three'
 export default function AnimazionePrincipale(props) {
   const group = useRef()
@@ -16,22 +16,27 @@ export default function AnimazionePrincipale(props) {
   const { scrollY } = useScroll({});
 
   useEffect(() => {
+
     names.forEach((name) => {
       actions[name].clampWhenFinished = true;
-      actions[name].setDuration(1);
+      actions[name].setDuration(2);
       actions[name].setLoop(THREE.LoopOnce);
+
       actions[name].play();
     })
+
   }, [])
+
   useFrame(() => {
-    group.current.rotation.y = scrollY.get() * -.002;
+    if (scrollY.get() < 3270) { group.current.rotation.y = scrollY.get() * -.002; }
+
   }
   )
 
 
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name="Scene">
+      <group name="Scene" >
         <group name="NurbsPath" position={[-19.127, 33.611, -9.205]} rotation={[0, 0, -Math.PI / 2]} />
         <group name="NurbsPath001" position={[-32.327, 36.746, -15.052]} rotation={[0, 0, -Math.PI / 2]} />
         <group name="NurbsPath002" position={[-47.85, 22.617, 5.73]} rotation={[0, 0, -Math.PI / 2]} />

@@ -3,37 +3,6 @@ import style from "./hero.module.scss";
 import dynamic from "next/dynamic";
 import { motion, useTransform, useScroll, useSpring } from "framer-motion";
 
-const HeroScene = dynamic(() => import("./heroScene"), {
-  ssr: false,
-  loading: () => (
-    <div
-      style={{
-        position: "relative",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100vh",
-
-        zIndex: 100,
-      }}
-    >
-      <h1
-        style={{
-          position: "absolute",
-          top: "40%",
-          left: "50%",
-          transform: "translate(-50%,-50%)",
-          opacity: 0.2,
-          fontSize: "3rem",
-          padding: ".5rem 2rem",
-          border: "1px solid #000",
-        }}
-      >
-        loading...
-      </h1>
-    </div>
-  ),
-});
 const springPhysics = {
   stiffness: 70,
   mass: 0.1,
@@ -50,7 +19,7 @@ function Hero() {
   );
   const slideScritteBackground = useTransform(
     scrollYProgress,
-    [0, 0.1],
+    [0, 0.6],
     ["0%", "-300%"]
   );
   const slideUpTxt = useTransform(scrollYProgress, [0, 0.2], ["0%", "-100%"]);
@@ -66,7 +35,6 @@ function Hero() {
   return (
     <div className={style.wrapperHero}>
       <div className={style.hero}>
-        <HeroScene />
         <motion.div
           className={style.hero__tech}
           style={{
@@ -80,7 +48,7 @@ function Hero() {
             opacity: 0,
           }}
           animate={{
-            opacity: 0.05,
+            opacity: 0.1,
           }}
           transition={{
             duration: 1,
@@ -91,6 +59,15 @@ function Hero() {
           Ruby, AWS, HTML, CSS, PostgreSQL ,GraphQL, MongoDB, MySQL Firebase +
           Firestore + Google Cloud Functions + Google Cloud Storage
         </motion.div>
+        <motion.video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className={"lastSectionContatti__video"}
+        >
+          <source src="/video.mp4" type="video/mp4" />
+        </motion.video>
         <motion.div className={style.hero__content}>
           <motion.div
             className={style.hero__title}

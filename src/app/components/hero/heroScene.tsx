@@ -1,20 +1,21 @@
 import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera, OrbitControls, useGLTF } from "@react-three/drei";
+
 import { Suspense, useRef } from "react";
 import AnimazionePrincipale from "./animazione";
 
-function HeroScene() {
+function HeroScene({ isInView }: { isInView: boolean }) {
   const target = useRef<HTMLCanvasElement>(null);
   //const {actions, names} = useAnimations(animations, group);
-
+  console.log(isInView);
   return (
     <>
       <Canvas ref={target} style={{ zIndex: 2 }}>
         <Suspense fallback={null}>
           <PerspectiveCamera
             makeDefault
-            position={[180, 350, -250]}
-            far={800}
+            position={[180, 300, -250]}
+            far={500}
             fov={13.2}
             coordinateSystem={2000}
           />
@@ -28,7 +29,7 @@ function HeroScene() {
             minPolarAngle={1}
             maxPolarAngle={1}
           />
-          <AnimazionePrincipale />
+          <AnimazionePrincipale isInView={isInView} />
         </Suspense>
       </Canvas>
     </>

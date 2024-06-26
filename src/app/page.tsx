@@ -24,6 +24,38 @@ const MugCanvas = dynamic(() => import("./components/3d/mug/mugCanvas"), {
   ssr: false,
   loading: () => <p>loading...</p>,
 });
+
+const HeroScene = dynamic(() => import("./components/hero/heroScene"), {
+  ssr: false,
+  loading: () => (
+    <div
+      style={{
+        position: "relative",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100vh",
+
+        zIndex: 100,
+      }}
+    >
+      <h1
+        style={{
+          position: "absolute",
+          top: "40%",
+          left: "50%",
+          transform: "translate(-50%,-50%)",
+          opacity: 0.2,
+          fontSize: "3rem",
+          padding: ".5rem 2rem",
+          border: "1px solid #000",
+        }}
+      >
+        loading...
+      </h1>
+    </div>
+  ),
+});
 import Form from "./components/form/form";
 import Image from "next/image";
 
@@ -34,7 +66,7 @@ export default function Home() {
   const wrapperSecondRef = useRef(null);
   const wrapperThirdRef = useRef(null);
   const wrapperContatti = useRef(null);
-
+  const isInView = useInView(wrapperContatti);
   const isWrapperSecondInView = useInView(wrapperSecondRef, {
     margin: "0% 0px -10% 0px",
   });
@@ -199,33 +231,7 @@ export default function Home() {
               className="lastSectionContatti__content__video"
               style={{ flex: "1", maxWidth: "60%" }}
             >
-              <motion.video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className={"lastSectionContatti__video"}
-              >
-                <source src="/video.mp4" type="video/mp4" />
-              </motion.video>
-              <motion.div
-                style={{
-                  width: "50%",
-                  height: "50%",
-                  transform: "translate(-50%, -50%)",
-                  position: "absolute",
-                  top: "50%",
-                  left: "50%",
-                  opacity: progressForm,
-                  overflow: "hidden",
-                }}
-              >
-                <Image
-                  src={"/img/contattaci.svg"}
-                  alt="contattaci"
-                  layout="fill"
-                />
-              </motion.div>
+              <HeroScene isInView={isInView} />
             </motion.div>
 
             <motion.div
