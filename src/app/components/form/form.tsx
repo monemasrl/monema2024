@@ -101,12 +101,7 @@ function Form() {
 
   return (
     <div className={style.wrapperForm}>
-      <div className={style.form__heading}>
-        <p>
-          Hai bisogno di informazioni o un progetto da proporci? <br />{" "}
-          Prendiamoci un caffè e parliamone.
-        </p>
-      </div>
+      <div className={style.form__heading}></div>
       <form
         className={`${style.form} ${style.form__lavora}`}
         name="contatti"

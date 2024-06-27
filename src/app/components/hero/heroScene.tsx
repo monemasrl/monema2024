@@ -18,6 +18,7 @@ function HeroScene({ isInView }: { isInView: boolean }) {
             far={500}
             fov={13.2}
             coordinateSystem={2000}
+            zoom={1.2}
           />
           <ambientLight intensity={4} color={"#1c70bf"} />
           <directionalLight position={[10, 90, -50]} color="white" />

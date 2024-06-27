@@ -226,10 +226,14 @@ export default function Home() {
           </motion.div>
         </section>
         <section className="lastSectionContatti" ref={wrapperContatti}>
+          <h2>
+            Hai bisogno di informazioni? <br /> Un progetto da proporci? <br />{" "}
+            Prendiamoci un caffè e parliamone.
+          </h2>
           <div className="lastSectionContatti__content">
             <motion.div
               className="lastSectionContatti__content__video"
-              style={{ flex: "1", maxWidth: "60%" }}
+              style={{ flex: "1", maxWidth: "45%" }}
             >
               <HeroScene isInView={isInView} />
             </motion.div>
@@ -239,6 +243,7 @@ export default function Home() {
                 width: progressContatti,
                 margin: "1rem",
                 overflow: "hidden",
+                height: "100vh",
               }}
             >
               <Form />

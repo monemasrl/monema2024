@@ -22,6 +22,12 @@ function Hero() {
     [0, 0.6],
     ["0%", "-300%"]
   );
+  const inclinaScritteBackground = useTransform(
+    scrollYProgress,
+    [0, 0.3],
+    [-20, 20]
+  );
+
   const slideUpTxt = useTransform(scrollYProgress, [0, 0.2], ["0%", "-100%"]);
   //smooth nell'animazione
   const animSlideUpTitle2 = useSpring(slideUpTitle2, springPhysics);
@@ -42,7 +48,7 @@ function Hero() {
             x: "-50%",
 
             skewX: -2,
-            skewY: -20,
+            skewY: inclinaScritteBackground,
           }}
           initial={{
             opacity: 0,

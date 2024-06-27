@@ -130,7 +130,15 @@ h1 {
   position: relative;
   height: 200vh;
   margin: 2rem;
-
+  h2 {
+    font-size: 4rem;
+    color: $blue;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1;
+    text-align: center;
+  }
   &__video {
     object-fit: cover;
     z-index: -1;
@@ -150,16 +158,8 @@ h1 {
     &__video {
       position: relative;
       overflow: hidden;
-      height: 1000px;
-    }
-    h2 {
-      font-size: 3rem;
-      color: $blue;
-      font-weight: 900;
-      text-transform: uppercase;
 
-      margin: 0;
-      line-height: 1;
+      height: 90vh;
     }
   }
 }
